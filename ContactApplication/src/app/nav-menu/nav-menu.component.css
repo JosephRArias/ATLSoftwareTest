@@ -1,5 +1,13 @@
-.fa-id-card-alt{
-  width: 30px;
-  height: 30px;
+.navbar i{
+  margin-right: 15px;
+  margin-bottom: 20px;
+  height: 80px;
+  font-size: 90px;
   color: white;
+}
+.navbar-brand{
+  font-size: 30px;
+}
+.nav-link{
+  font-size: 25px;
 }

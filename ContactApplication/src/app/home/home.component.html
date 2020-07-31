@@ -6,35 +6,14 @@
   <table class="table ">
       <thead class="thead-dark ">
           <tr>
-              <th scope="col ">#</th>
-              <th scope="col ">Request</th>
-              <th scope="col ">Requester</th>
-              <th scope="col ">Date</th>
-              <th scope="col ">Tests</th>
-              <th scope="col ">Proposito</th>
-              <th scope="col ">Prioridad</th>
-              <th scope="col ">Asignados</th>
-              <th scope="col ">Status</th>
+              <th scope="col ">Name</th>
+              <th scope="col ">Email</th>
+              <th scope="col ">Phone Number</th>
           </tr>
       </thead>
       <tbody>
-          <tr *ngFor = "let item of lastFive, let i = index">
-              <th scope="row ">{{i + 1}}</th>
-              <td>{{item.BatchID}}</td>
-              <td>{{item.user}}</td>
-              <td>{{item.Date}}</td>
-              <td>{{item.TestTypes}}</td>
-              <td>{{item.Purpose}}</td>
-              <td *ngIf = "item.Priority == 1">Baja</td>
-              <td *ngIf = "item.Priority == 2">Media</td>
-              <td *ngIf = "item.Priority == 3">Alta</td>
-              <td *ngIf = "item.Priority == 4">Urgente</td>
-              <td>{{item.tech}}</td>
-              <td>{{item.Status}}</td>
-             <!---- <td>
-                  <button class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
-              </td>
-              --->
+          <tr *ngFor = "">
+
           </tr>
       </tbody>
   </table>
