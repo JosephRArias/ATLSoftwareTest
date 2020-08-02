@@ -6,11 +6,11 @@
 
   <div class="collapse navbar-collapse" id="navbarsExample02">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" [routerLink] = "['']">Home</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/contactForm">Contact Form</a>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a class="nav-link" [routerLink] = "['contactForm']">Contact Form</a>
       </li>
     </ul>
   </div>

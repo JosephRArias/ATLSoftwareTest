@@ -1,5 +1,14 @@
-{
-  "Name" : "Pedro",
-  "Email" : "pedrorojas@hotmail.es",
-  "Phone Number" : "8095554444"
-}
+[
+  {
+    "name" : "Pedro",
+    "email" : "pedrorojas@hotmail.es",
+    "phoneNumber" : "8095554444",
+    "address" : "Av. Tiradentes #25"
+  },
+  {
+    "name" : "Johnny",
+    "email" : "johnnybravo@gmail.com",
+    "phoneNumber" : "7650043543",
+    "address" : "Calle Primera #31"
+  }
+]
