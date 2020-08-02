@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
-import { ContactsModel } from '../models/contact.model';
 
 @Component({
   selector: 'app-home',
@@ -9,16 +8,12 @@ import { ContactsModel } from '../models/contact.model';
 })
 export class HomeComponent implements OnInit {
 
-  contacts: ContactsModel[] = [];
+  contacts : any = [];
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getContacts()
-    .subscribe(
-      (contacts : ContactsModel[])=>{
-        this.contacts = contacts;
-      }
-    );
+    this.contacts = this.dataService.getContacts();
+    console.log(this.contacts);
   }
 
 }

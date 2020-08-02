@@ -11,7 +11,16 @@ export class DataService {
   constructor(private httpClient: HttpClient) {
   }
   getContacts(){
-    return this.httpClient.get('./assets/contacts.json');
+    this.httpClient.get('./assets/contacts.json').subscribe(res =>
+    {
+      for(const id in res){
+        this.data.push(res[id]);
+      }
+    });
+    return this.data;
+  }
+  addNewContact(data: ContactsModel){
+    this.data.push(data);
   }
 
 }

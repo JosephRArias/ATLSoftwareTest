@@ -7,10 +7,10 @@
       (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="Name">Name</label>
-        <input type="text" formControlName = "Name" class="form-control"
+        <input type="text" formControlName = "name" class="form-control"
         [ngClass]="{
           'is-invalid':
-          Contact.get('Name').touched && Contact.get('Name').errors
+          Contact.get('name').touched && Contact.get('name').errors
         }">
         <div class="invalid-feedback">
           Debe introducir un nombre
@@ -19,10 +19,10 @@
 
       <div class="form-group">
         <label for="Email">Email</label>
-        <input type="email" formControlName = "Email" class="form-control"
+        <input type="email" formControlName = "email" class="form-control"
         [ngClass]="{
           'is-invalid':
-          Contact.get('Email').touched && Contact.get('Email').invalid
+          Contact.get('email').touched && Contact.get('email').invalid
         }">
         <div class="invalid-feedback">
           Debe introducir un email valido
@@ -30,19 +30,27 @@
       </div>
       <div class="form-group">
         <label for="Email">Phone Number</label>
-        <div *ngFor = "let phone of this.Contact.get('PhoneNumber').controls">
-          <input type="tel" formArrayName = "PhoneNumber" class="form-control">
+        <div *ngFor = "let phone of formArray.controls; index as i" formArrayName = "phoneNumber">
+          <input type="tel" [formControlName]="i" class="form-control"
+          [ngClass]="{
+            'is-invalid':
+            formArray.controls[i].invalid
+          }">
+          <div class="invalid-feedback">
+            Debe insertar un numero de tel&eacute;fono v&acute;lido
+          </div>
         </div>
+        <button type="button" id="phoneButton"(click) = "AddPhoneNumber()">Add Another Phone Number</button>
       </div>
       <div class="form-group">
-        <label for="Email">Address</label>
-        <input type="text" formControlName = "Name" class="form-control">
+        <label for="Address">Address</label>
+        <input type="text" formControlName = "address" class="form-control">
       </div>
       <button
           id="submitButton"
           type="submit"
           class="btn btn-primary"
-          [disabled]="!Contact.valid"
+          [disabled]="Contact.invalid"
         >
           <i class="fa fa-save"></i> Submit Request
         </button>
