@@ -39,7 +39,7 @@ label{
    font-size: 11px;
    padding: 2px;
 }
-#submitButton{
+.btn-primary{
   margin-top: 5px;
   padding: 5px;
   background-color: #212529;
@@ -50,3 +50,12 @@ label{
   color: white;
   padding: 5px;
 }
+#cancelButton{
+  margin-left: 5px;
+  margin-top: 5px;
+  padding: 5px;
+}
+#cancelButton > i{
+  margin-right: 3px;
+}
+

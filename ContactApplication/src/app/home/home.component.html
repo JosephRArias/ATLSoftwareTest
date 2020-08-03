@@ -10,14 +10,20 @@
               <th scope="col" style="text-align: center;">Email</th>
               <th scope="col" style="text-align: center;">Phone Number</th>
               <th scope="col" style="text-align: center;">Address</th>
+              <th scope="col" style="text-align: center;">Actions</th>
           </tr>
       </thead>
       <tbody>
-          <tr *ngFor = "let item of contacts">
+          <tr *ngFor = "let item of contacts, index as i">
             <td style="text-align: center;">{{item.name}}</td>
             <td style="text-align: center;">{{item.email}}</td>
             <td style="text-align: center;">{{item.phoneNumber}}</td>
             <td style="text-align: center;">{{item.address}}</td>
+            <td style="text-align: center;">
+              <button type="button" class="btn btn-warning btn-sm"  [routerLink] = "['/contactForm', i]">
+                  <i class="fa fa-pencil"></i>
+              </button>
+          </td>
           </tr>
       </tbody>
   </table>

@@ -2,7 +2,7 @@
   {
     "name" : "Pedro",
     "email" : "pedrorojas@hotmail.es",
-    "phoneNumber" : "8095554444",
+    "phoneNumber" : ["8095554444","8094443333"],
     "address" : "Av. Tiradentes #25"
   },
   {

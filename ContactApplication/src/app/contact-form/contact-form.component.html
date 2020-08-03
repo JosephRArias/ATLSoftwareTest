@@ -10,7 +10,7 @@
         <input type="text" formControlName = "name" class="form-control"
         [ngClass]="{
           'is-invalid':
-          Contact.get('name').touched && Contact.get('name').errors
+          Contact.get('name').errors
         }">
         <div class="invalid-feedback">
           Debe introducir un nombre
@@ -22,7 +22,7 @@
         <input type="email" formControlName = "email" class="form-control"
         [ngClass]="{
           'is-invalid':
-          Contact.get('email').touched && Contact.get('email').invalid
+          Contact.get('email').invalid
         }">
         <div class="invalid-feedback">
           Debe introducir un email valido
@@ -54,6 +54,13 @@
         >
           <i class="fa fa-save"></i> Submit Request
         </button>
+      <button
+      id="cancelButton"
+      type="reset"
+      class="btn btn-danger"
+      (click) = "discardData()">
+      <i class="fa fa-times-circle"></i>Cancel
+    </button>
     </form>
     </div>
   </div>
