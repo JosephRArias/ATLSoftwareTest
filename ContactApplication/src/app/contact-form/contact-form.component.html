@@ -1,7 +1,8 @@
 <div class="container">
   <div class="main">
     <div class="main-center">
-      <h1>Registrar nuevo contacto</h1>
+      <h1 *ngIf="!this.index">Registrar nuevo contacto</h1>
+      <h1 *ngIf="this.index">Editar Contacto Existente</h1>
       <form
       [formGroup]="this.Contact"
       (ngSubmit)="onSubmit()">
@@ -56,7 +57,7 @@
         </button>
       <button
       id="cancelButton"
-      type="reset"
+      type="button"
       class="btn btn-danger"
       (click) = "discardData()">
       <i class="fa fa-times-circle"></i>Cancel
