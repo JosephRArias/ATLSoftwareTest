@@ -8,7 +8,7 @@
   {
     "name" : "Johnny",
     "email" : "johnnybravo@gmail.com",
-    "phoneNumber" : "7650043543",
+    "phoneNumber" : ["7650043543"],
     "address" : "Calle Primera #31"
   }
 ]

@@ -12,6 +12,7 @@ import swal from 'sweetalert2';
 })
 export class ContactFormComponent implements OnInit {
   formArray: FormArray;
+  contact: ContactsModel;
   index: number;
   Contact = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(4)]),
@@ -27,14 +28,13 @@ export class ContactFormComponent implements OnInit {
   ngOnInit() {
     this.index = this.route.snapshot.params['id'];
     if(this.index){
-      let contact: ContactsModel = this.dataService.findContact(this.index);
-      this.Contact.get('name').setValue(contact.name);
-      this.Contact.get('email').setValue(contact.email);
-      this.Contact.get('address').setValue(contact.address);
-      this.formArray.removeAt(0);
-      for(const phone in contact.phoneNumber){
-        this.formArray.push(new FormControl(contact.phoneNumber[phone]));
-      }
+      this.contact = this.dataService.findContact(this.index);
+      this.Contact.patchValue({
+        name: this.contact.name,
+        email: this.contact.email,
+        phoneNumber: this.contact.phoneNumber,
+        address: this.contact.address
+      });
     }
   }
   onSubmit(){
